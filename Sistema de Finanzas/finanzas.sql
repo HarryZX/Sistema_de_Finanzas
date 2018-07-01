@@ -9,3 +9,23 @@ create table usuarios(
     credencial varchar(15),
     fecha_nac date
 )engine = innoDB;
+
+create table roles(
+	idrol int(10) primary key not null auto_increment,
+    rol varchar(100)
+)engine = innoDB;
+
+create table permisos(
+	idpermiso int(10) primary key not null auto_increment,
+    idrol int(10),
+    idopcion int(10),
+    foreign key(idrol) references roles(idrol),
+    foreign key(idopcion) references opciones(idopcion)
+)engine = innoDB;
+
+create table opciones(
+	idopcion int(10) primary key not null auto_increment,
+    opcion varchar(100),
+    clasificacion varchar(100),
+    fecha_creacion date
+)engine = innoDB;
