@@ -29,3 +29,22 @@ create table opciones(
     clasificacion varchar(100),
     fecha_creacion date
 )engine = innoDB;
+
+/*modificar estas tablas, aún hay que asignarles la relación y agregarles otros campos*/
+
+create table cuentas(
+	idcuenta int primary key not null auto_increment,
+    tipocuenta varchar(200)
+)engine = innoDB;
+
+create table ingresos(
+	idingreso int primary key not null auto_increment,
+    tipoingreso varchar(200),
+    cantidad double
+)engine = innoDB;
+
+create table gastos(
+	idgasto int primary key not null auto_increment,
+    tipogasto varchar(200),
+    cantidad double
+)engine = innoDB;
